@@ -1,20 +1,20 @@
 buildscript
 {
-	repositories
-	{
-		mavenLocal()
-		jcenter()
-		maven
-		{
-			url 'http://dl.bintray.com/sleroy/maven'
-		}
-	}
+  repositories
+  {
+    mavenLocal()
+    jcenter()
+    maven
+    {
+      url 'http://dl.bintray.com/sleroy/maven'
+    }
+  }
 
-	dependencies
-	{
-		classpath 'com.metrixware:gradle-doc-plugin:0.1.4'
-		classpath 'com.diffplug.spotless:spotless-plugin-gradle:4.0.1'
-	}
+  dependencies
+  {
+    classpath 'com.metrixware:gradle-doc-plugin:0.1.4'
+    classpath 'com.diffplug.spotless:spotless-plugin-gradle:4.0.1'
+  }
 }
 
 apply plugin: 'pandoc'
@@ -24,39 +24,39 @@ apply plugin: 'groovy'
 
 documentation
 {
-	templates
-	{
-		template
-		{
-			name = 'standard'
-			outputs =['html', 'pdf']
-		}
-	}
+  templates
+  {
+    template
+    {
+      name = 'standard'
+      outputs =['html', 'pdf']
+    }
+  }
 
-	documents
-	{
-		document
-		{
-			name = 'example'
-			type = 'md'
-			languages=['en']
-		}
-	}
+  documents
+  {
+    document
+    {
+      name = 'example'
+      type = 'md'
+      languages=['en']
+    }
+  }
 }
 
 spotless
 {
-	format 'misc',
-	{
-		target 'sources/**/*.md', '**/.gitignore'
+  format 'misc',
+  {
+    target 'sources/**/*.md', '**/.gitignore'
 
-		prettier()
-	}
-	groovyGradle
-	{
-		// same as groovy, but for .gradle (defaults to '*.gradle')
-		target '*.gradle'
-		greclipse().configFile('greclipse.properties')
+    prettier()
+  }
+  groovyGradle
+  {
+    // same as groovy, but for .gradle (defaults to '*.gradle')
+    target '*.gradle'
+    greclipse().configFile('greclipse.properties')
 
-	}
+  }
 }
