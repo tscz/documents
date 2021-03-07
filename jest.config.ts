@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
   verbose: true,
   preset: 'ts-jest',
   testEnvironment: 'node',
-  rootDir: "./src/__tests__"
+  rootDir: "./src/__tests__",
 };
 
 export default config;
