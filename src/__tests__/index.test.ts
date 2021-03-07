@@ -1,5 +1,7 @@
 import { hello } from "..";
 
-test('index.ts', () => {
-    expect(hello("test")).toBe('Hello test! ');
+describe("CLI Application", () => {
+  test("basic app can be started", () => {
+    expect(hello("test")).toBe("Hello test! ");
   });
+});
